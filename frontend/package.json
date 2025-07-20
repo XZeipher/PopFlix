@@ -3,12 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-oauth/google": "^0.12.2",
+    "@videojs/themes": "^1.0.1",
     "axios": "^1.8.4",
     "cra-template": "1.2.0",
+    "framer-motion": "^12.23.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.5.1",
-    "react-scripts": "5.0.1"
+    "react-scripts": "5.0.1",
+    "video.js": "^8.23.3"
   },
   "scripts": {
     "start": "craco start",
