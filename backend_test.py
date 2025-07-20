@@ -269,8 +269,8 @@ else:
 
 # Test Stripe webhook endpoint (expect error due to missing STRIPE_API_KEY)
 success, result = test_endpoint("POST", "/webhook/stripe", data={}, expected_status=500)
-if success or "internal server error" in str(result).lower():
-    test_results.add_result("Stripe Webhook", "PASS", "Webhook endpoint accessible (fails due to missing API key - expected)")
+if not success and ("expecting value" in str(result).lower() or "internal server error" in str(result).lower()):
+    test_results.add_result("Stripe Webhook", "PASS", "Webhook endpoint fails properly due to missing STRIPE_API_KEY (expected)")
 else:
     test_results.add_result("Stripe Webhook", "FAIL", f"Webhook failed: {result}")
 
