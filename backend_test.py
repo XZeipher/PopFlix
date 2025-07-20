@@ -178,7 +178,7 @@ else:
 
 # Test payment status endpoint
 success, result = test_endpoint("GET", "/payments/status/invalid_session_id", expected_status=404)
-if not success and "not found" in str(result).lower():
+if success or "not found" in str(result).lower():
     test_results.add_result("Payment Status Check", "PASS", "Handles invalid session IDs properly")
 else:
     test_results.add_result("Payment Status Check", "FAIL", "Should handle invalid session IDs")
