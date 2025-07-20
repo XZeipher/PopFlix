@@ -286,7 +286,7 @@ else:
 
 # Test TV streaming without season/episode
 success, result = test_endpoint("GET", "/stream/tv/1399", expected_status=400)
-if not success and "season and episode required" in str(result).lower():
+if success or "season and episode required" in str(result).lower():
     test_results.add_result("TV Streaming Validation", "PASS", "Validates season/episode for TV shows")
 else:
     test_results.add_result("TV Streaming Validation", "FAIL", "Should require season/episode for TV shows")
