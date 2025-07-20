@@ -264,10 +264,10 @@ metadata:
 
 test_plan:
   current_focus:
-    - "TMDB API Integration"
-    - "Video Streaming Integration"
-    - "User Authentication System"
-    - "Premium Payment System"
+    - "Content Display System"
+    - "Authentication Integration"
+    - "Video Player Integration"
+    - "Premium Subscription Flow"
   stuck_tasks: []
   test_all: false
   test_priority: "high_first"
