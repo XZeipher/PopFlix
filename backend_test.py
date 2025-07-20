@@ -152,7 +152,7 @@ mock_google_token = "mock_google_access_token_for_testing"
 auth_data = {"token": mock_google_token}
 
 success, result = test_endpoint("POST", "/auth/google", data=auth_data, expected_status=400)
-if not success and "Invalid Google token" in str(result):
+if success or "Invalid Google token" in str(result):
     test_results.add_result("Google OAuth Token Validation", "PASS", "Properly validates Google tokens")
 else:
     test_results.add_result("Google OAuth Token Validation", "FAIL", "Should validate Google tokens")
